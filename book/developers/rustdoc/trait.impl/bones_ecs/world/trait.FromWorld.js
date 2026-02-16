@@ -1,3 +1,9 @@
-(function() {var implementors = {
-"jumpy":[["impl <a class=\"trait\" href=\"jumpy/prelude/trait.FromWorld.html\" title=\"trait jumpy::prelude::FromWorld\">FromWorld</a> for <a class=\"struct\" href=\"jumpy/core/debug/struct.RapierDebugContext.html\" title=\"struct jumpy::core::debug::RapierDebugContext\">RapierDebugContext</a>"],["impl <a class=\"trait\" href=\"jumpy/prelude/trait.FromWorld.html\" title=\"trait jumpy::prelude::FromWorld\">FromWorld</a> for <a class=\"struct\" href=\"jumpy/core/player/struct.PathfindingDebugLines.html\" title=\"struct jumpy::core::player::PathfindingDebugLines\">PathfindingDebugLines</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
+(function() {
+    var implementors = Object.fromEntries([["jumpy",[["impl <a class=\"trait\" href=\"jumpy/prelude/trait.FromWorld.html\" title=\"trait jumpy::prelude::FromWorld\">FromWorld</a> for <a class=\"struct\" href=\"jumpy/core/debug/struct.RapierDebugContext.html\" title=\"struct jumpy::core::debug::RapierDebugContext\">RapierDebugContext</a>"],["impl <a class=\"trait\" href=\"jumpy/prelude/trait.FromWorld.html\" title=\"trait jumpy::prelude::FromWorld\">FromWorld</a> for <a class=\"struct\" href=\"jumpy/core/player/struct.PathfindingDebugLines.html\" title=\"struct jumpy::core::player::PathfindingDebugLines\">PathfindingDebugLines</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[598]}

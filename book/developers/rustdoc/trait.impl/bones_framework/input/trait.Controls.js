@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["jumpy",[["impl <a class=\"trait\" href=\"jumpy/prelude/trait.Controls.html\" title=\"trait jumpy::prelude::Controls\">Controls</a>&lt;'_, <a class=\"struct\" href=\"jumpy/input/struct.PlayerControl.html\" title=\"struct jumpy::input::PlayerControl\">PlayerControl</a>&gt; for <a class=\"struct\" href=\"jumpy/core/input/struct.MatchInputs.html\" title=\"struct jumpy::core::input::MatchInputs\">MatchInputs</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[416]}

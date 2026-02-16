@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Define input types used by game for use in networking."><title>DenseInputConfig in jumpy::prelude - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="jumpy" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.0 (254b59607 2026-01-19)" data-channel="1.93.0" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"><script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.2.2/dist/mermaid.esm.min.mjs"
+    mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: 'loose',
+        theme: 'dark',
+        themeVariables: {
+            fontSize: '16px',
+            lineColor: '#F8B229',
+            clusterBkg: '#0000',
+            edgeLabelBackground: '#1A1A1A'
+        }
+    });
+    mermaid.run({
+        querySelector: '.mermaid',
+        postRenderCallback: id => {
+            let el = document.getElementById(id);
+            const pz = panzoom(el, {
+                smoothScroll: false,
+                zoomDoubleClickSpeed: 1,
+                beforeWheel: function (e) {
+                    // allow wheel-zoom only if ctrl is down. Otherwise - ignore
+                    var shouldIgnore = !e.ctrlKey;
+                    return shouldIgnore;
+                }
+            })
+
+            const plusDiv = document.createElement('div');
+            plusDiv.style = "width: 25px; height: 25px; position: absolute; right: 0.8em; bottom: 0.8em; border: 2px solid #BBB; text-align: center; padding: auto; font-size: 18px; background-color: #222; cursor: pointer"
+            plusDiv.innerText = "+"
+            plusDiv.onclick = () => {
+                pz.smoothZoom(0, 0, 1.2)
+            }
+            el.parentNode.appendChild(plusDiv);
+
+            const minusDiv = document.createElement('div');
+            minusDiv.style = "width: 25px; height: 25px; position: absolute; right: 2.4em; bottom: 0.8em; border: 2px solid #BBB; text-align: center; padding: auto; font-size: 18px; background-color: #222; cursor: pointer"
+            minusDiv.innerText = "-"
+            minusDiv.onclick = () => {
+                pz.smoothZoom(0, 0, 0.8)
+            }
+            el.parentNode.appendChild(minusDiv);
+        }
+    })
+
+    // Callback for use in mermaid diagrams that will open a relative doc link when clicking.
+    //
+    // Example doc link for `arg` would be: jumpy/session/struct.SessionManager.html
+    window.docLink = (arg) => {
+        let pathElems = new URL(window.location.href).pathname.split('/').filter(x => x != '');
+        for (let i = pathElems.length - 1; i > -1; i--) {
+            if (pathElems[i] != 'jumpy' && pathElems[i] != 'jumpy_core') {
+                pathElems = pathElems.slice(0, i - 1);
+                break;
+            }
+        }
+        window.location.href = '/' + pathElems.join('/') + '/' + arg;
+    }
+</script>
+<style>
+    /*
+        Hide the lock icons shown for private items. It isn't helpful
+        in this context.
+    */
+    [title="Restricted Visibility"] {
+        display: none;
+    }
+
+    .mermaid {
+        overflow: hidden !important;
+        border: 1px solid #BBB;
+        border-radius: 1em;
+        cursor: move;
+        position: relative;
+    }
+
+    .dotted rect {
+        stroke-dasharray: 5;
+    }
+
+    .code .nodeLabel {
+        color: #2dbfb8 !important;
+    }
+
+    .code rect {
+        transition: 0.2s;
+        stroke: #2dbfb8 !important;
+    }
+
+    .code:hover rect {
+        transform: scale(1.05)
+    }
+</style>
+
+</head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">DenseInputConfig</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../jumpy/index.html"><img src="https://avatars.githubusercontent.com/u/87333478?s=200&#38;v=4" alt="logo"></a><h2><a href="../../jumpy/index.html">jumpy</a><span class="version">0.12.2</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Dense<wbr>Input<wbr>Config</a></h2><h3><a href="#required-associated-types">Required Associated Types</a></h3><ul class="block"><li><a href="#associatedtype.Control" title="Control">Control</a></li><li><a href="#associatedtype.Controls" title="Controls">Controls</a></li><li><a href="#associatedtype.Dense" title="Dense">Dense</a></li><li><a href="#associatedtype.InputCollector" title="InputCollector">InputCollector</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In jumpy::<wbr>prelude</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">jumpy</a>::<wbr><a href="index.html">prelude</a></div><h1>Trait <span class="trait">Dense<wbr>Input<wbr>Config</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait DenseInputConfig&lt;'a&gt; {
+    type <a href="#associatedtype.Dense" class="associatedtype">Dense</a>: <a class="trait" href="trait.DenseInput.html" title="trait jumpy::prelude::DenseInput">DenseInput</a> + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/default/trait.Default.html" title="trait core::default::Default">Default</a>;
+    type <a href="#associatedtype.Control" class="associatedtype">Control</a>: <a class="trait" href="trait.DenseControl.html" title="trait jumpy::prelude::DenseControl">DenseControl</a>&lt;Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Dense" title="type jumpy::prelude::DenseInputConfig::Dense">Dense</a>&gt;;
+    type <a href="#associatedtype.Controls" class="associatedtype">Controls</a>: <a class="trait" href="trait.Controls.html" title="trait jumpy::prelude::Controls">Controls</a>&lt;'a, Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Control" title="type jumpy::prelude::DenseInputConfig::Control">Control</a>&gt; + <a class="trait" href="trait.HasSchema.html" title="trait jumpy::prelude::HasSchema">HasSchema</a>;
+    type <a href="#associatedtype.InputCollector" class="associatedtype">InputCollector</a>: <a class="trait" href="trait.InputCollector.html" title="trait jumpy::prelude::InputCollector">InputCollector</a>&lt;'a, Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Control" title="type jumpy::prelude::DenseInputConfig::Control">Control</a>&gt; + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/default/trait.Default.html" title="trait core::default::Default">Default</a>;
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Define input types used by game for use in networking.</p>
+<p>As long as types <code>Controls</code> and <code>InputCollector</code> implement traits <a href="trait.Controls.html" title="trait jumpy::prelude::Controls"><code>Controls</code></a> and <a href="trait.InputCollector.html" title="trait jumpy::prelude::InputCollector"><code>InputCollector</code></a>,
+trait bounds <a href="trait.DenseControl.html" title="trait jumpy::prelude::DenseControl"><code>DenseControl</code></a> and <a href="trait.DenseInputCollector.html" title="trait jumpy::prelude::DenseInputCollector"><code>DenseInputCollector</code></a> are automatically implemented.</p>
+</div></details><h2 id="required-associated-types" class="section-header">Required Associated Types<a href="#required-associated-types" class="anchor">§</a></h2><div class="methods"><section id="associatedtype.Dense" class="method"><h4 class="code-header">type <a href="#associatedtype.Dense" class="associatedtype">Dense</a>: <a class="trait" href="trait.DenseInput.html" title="trait jumpy::prelude::DenseInput">DenseInput</a> + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/default/trait.Default.html" title="trait core::default::Default">Default</a></h4></section><section id="associatedtype.Control" class="method"><h4 class="code-header">type <a href="#associatedtype.Control" class="associatedtype">Control</a>: <a class="trait" href="trait.DenseControl.html" title="trait jumpy::prelude::DenseControl">DenseControl</a>&lt;Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Dense" title="type jumpy::prelude::DenseInputConfig::Dense">Dense</a>&gt;</h4></section><section id="associatedtype.Controls" class="method"><h4 class="code-header">type <a href="#associatedtype.Controls" class="associatedtype">Controls</a>: <a class="trait" href="trait.Controls.html" title="trait jumpy::prelude::Controls">Controls</a>&lt;'a, Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Control" title="type jumpy::prelude::DenseInputConfig::Control">Control</a>&gt; + <a class="trait" href="trait.HasSchema.html" title="trait jumpy::prelude::HasSchema">HasSchema</a></h4></section><section id="associatedtype.InputCollector" class="method"><h4 class="code-header">type <a href="#associatedtype.InputCollector" class="associatedtype">InputCollector</a>: <a class="trait" href="trait.InputCollector.html" title="trait jumpy::prelude::InputCollector">InputCollector</a>&lt;'a, Self::<a class="associatedtype" href="trait.DenseInputConfig.html#associatedtype.Control" title="type jumpy::prelude::DenseInputConfig::Control">Control</a>&gt; + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/default/trait.Default.html" title="trait core::default::Default">Default</a></h4></section></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"><details class="toggle implementors-toggle"><summary><section id="impl-DenseInputConfig%3C'a%3E-for-NetworkInputConfig" class="impl"><a class="src rightside" href="../../src/jumpy/input.rs.html#508-513">Source</a><a href="#impl-DenseInputConfig%3C'a%3E-for-NetworkInputConfig" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="trait.DenseInputConfig.html" title="trait jumpy::prelude::DenseInputConfig">DenseInputConfig</a>&lt;'a&gt; for <a class="struct" href="../input/struct.NetworkInputConfig.html" title="struct jumpy::input::NetworkInputConfig">NetworkInputConfig</a></h3><span class="item-info"><div class="stab portability">Available on <strong>non-WebAssembly</strong> only.</div></span></section></summary><div class="impl-items"><section id="associatedtype.Dense-1" class="associatedtype trait-impl"><a class="src rightside" href="../../src/jumpy/input.rs.html#509">Source</a><a href="#associatedtype.Dense-1" class="anchor">§</a><h4 class="code-header">type <a href="#associatedtype.Dense" class="associatedtype">Dense</a> = <a class="struct" href="../input/struct.DensePlayerControl.html" title="struct jumpy::input::DensePlayerControl">DensePlayerControl</a></h4></section><section id="associatedtype.Control-1" class="associatedtype trait-impl"><a class="src rightside" href="../../src/jumpy/input.rs.html#510">Source</a><a href="#associatedtype.Control-1" class="anchor">§</a><h4 class="code-header">type <a href="#associatedtype.Control" class="associatedtype">Control</a> = <a class="struct" href="../input/struct.PlayerControl.html" title="struct jumpy::input::PlayerControl">PlayerControl</a></h4></section><section id="associatedtype.Controls-1" class="associatedtype trait-impl"><a class="src rightside" href="../../src/jumpy/input.rs.html#511">Source</a><a href="#associatedtype.Controls-1" class="anchor">§</a><h4 class="code-header">type <a href="#associatedtype.Controls" class="associatedtype">Controls</a> = <a class="struct" href="../core/input/struct.MatchInputs.html" title="struct jumpy::core::input::MatchInputs">MatchInputs</a></h4></section><section id="associatedtype.InputCollector-1" class="associatedtype trait-impl"><a class="src rightside" href="../../src/jumpy/input.rs.html#512">Source</a><a href="#associatedtype.InputCollector-1" class="anchor">§</a><h4 class="code-header">type <a href="#associatedtype.InputCollector" class="associatedtype">InputCollector</a> = <a class="struct" href="../input/struct.PlayerInputCollector.html" title="struct jumpy::input::PlayerInputCollector">PlayerInputCollector</a></h4></section></div></details></div><script src="../../trait.impl/bones_framework/input/trait.DenseInputConfig.js" async></script></section></div></main></body></html>

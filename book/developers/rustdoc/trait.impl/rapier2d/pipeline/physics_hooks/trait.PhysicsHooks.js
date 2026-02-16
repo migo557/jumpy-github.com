@@ -1,3 +1,9 @@
-(function() {var implementors = {
-"jumpy":[["impl <a class=\"trait\" href=\"jumpy/core/physics/rapier/trait.PhysicsHooks.html\" title=\"trait jumpy::core::physics::rapier::PhysicsHooks\">PhysicsHooks</a> for <a class=\"struct\" href=\"jumpy/core/physics/collisions/struct.PhysicsHooks.html\" title=\"struct jumpy::core::physics::collisions::PhysicsHooks\">PhysicsHooks</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
+(function() {
+    var implementors = Object.fromEntries([["jumpy",[["impl <a class=\"trait\" href=\"jumpy/core/physics/rapier/trait.PhysicsHooks.html\" title=\"trait jumpy::core::physics::rapier::PhysicsHooks\">PhysicsHooks</a> for <a class=\"struct\" href=\"jumpy/core/physics/collisions/struct.PhysicsHooks.html\" title=\"struct jumpy::core::physics::collisions::PhysicsHooks\">PhysicsHooks</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[343]}

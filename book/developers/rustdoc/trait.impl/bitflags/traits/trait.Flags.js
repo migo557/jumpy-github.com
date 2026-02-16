@@ -1,3 +1,9 @@
-(function() {var implementors = {
-"jumpy":[["impl Flags for <a class=\"struct\" href=\"jumpy/core/physics/collisions/filtering/struct.CollisionGroup.html\" title=\"struct jumpy::core::physics::collisions::filtering::CollisionGroup\">CollisionGroup</a>"],["impl Flags for <a class=\"struct\" href=\"jumpy/core/physics/collisions/filtering/struct.SolverGroup.html\" title=\"struct jumpy::core::physics::collisions::filtering::SolverGroup\">SolverGroup</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
+(function() {
+    var implementors = Object.fromEntries([["jumpy",[["impl Flags for <a class=\"struct\" href=\"jumpy/core/physics/collisions/filtering/struct.CollisionGroup.html\" title=\"struct jumpy::core::physics::collisions::filtering::CollisionGroup\">CollisionGroup</a>"],["impl Flags for <a class=\"struct\" href=\"jumpy/core/physics/collisions/filtering/struct.SolverGroup.html\" title=\"struct jumpy::core::physics::collisions::filtering::SolverGroup\">SolverGroup</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[424]}
